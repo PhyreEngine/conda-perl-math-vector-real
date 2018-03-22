@@ -1,0 +1,43 @@
+{% set name = "perl-math-vector-real" %}
+{% set version = "0.18" %}
+{% set sha256 = "b24d1907e60619300db24af21c6ee95327c51d9f75c5a0c3921d6ed64e3e54fa" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  fn: Math-Vector-Real-0.18.tar.gz
+  url: https://cpan.metacpan.org/authors/id/S/SA/SALVA/Math-Vector-Real-0.18.tar.gz
+  sha256: {{ sha256 }}
+
+# If this is a new build for the same version, increment the build
+# number. If you do not include this key, it defaults to 0.
+build:
+  number: 0
+
+requirements:
+  build:
+    - perl ==5.22.0.*
+    - perl-extutils-makemaker
+
+  run:
+    - perl ==5.22.0.*
+
+test:
+  # Perl 'use' tests
+  imports:
+    - Math::Vector::Real
+    - Math::Vector::Real::Test
+
+  # You can also put a file called run_test.pl (or run_test.py) in the recipe
+  # that will be run at test time.
+
+about:
+  home: http://metacpan.org/pod/Math::Vector::Real
+  license: unknown
+  summary: 'Real vector arithmetic in Perl'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
