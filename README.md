@@ -9,7 +9,7 @@ This repository contains a [conda][conda] recipe for the Perl package
 
 ## Building
 
-You should be able to build this package by simply running `conda build .`.
+You should be able to build this package by simply running `./build`.
 
 ## Perl version
 
